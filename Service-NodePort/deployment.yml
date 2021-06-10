@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: mydep
+spec:
+ replicas: 2
+ selector:
+   matchLabels:
+      dep: test
+ template:
+  metadata:
+   name: depos
+   labels: 
+     dep: test
+  spec:
+    containers:
+    - name: tempos
+      image: shivanshu1025/k8stesting:v2
+ 

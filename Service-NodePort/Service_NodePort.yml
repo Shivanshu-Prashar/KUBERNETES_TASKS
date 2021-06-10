@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: mydepsvc
+spec:
+ type: NodePort
+ selector:
+  dep: test
+ ports: 
+ - targetPort: 80
+   port: 888
+   nodePort: 30000

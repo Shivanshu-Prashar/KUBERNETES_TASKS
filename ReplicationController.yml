@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+ name: myrc
+spec:
+ replicas: 5
+ selector:
+    first: pod
+    app: web
+ template:
+   metadata:
+    name: temp
+    labels:
+     first: pod
+     app: web
+   spec:
+     containers:
+     - name: myrccont
+       image: shivanshu1025/k8stesting:v2

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name : myfirstpod
+ labels:
+   first: pod
+spec:
+ containers:
+ - name: myk8scont
+   image: shivanshu1025/k8stesting:v2
+  

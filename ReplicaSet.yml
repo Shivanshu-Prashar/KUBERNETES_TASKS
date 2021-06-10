@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+ name: myrs
+
+spec:
+ selector:
+   matchLabels:
+      app: web
+   matchExpressions:
+   - { key: eg, operator: In, values: [rs] }
+
+ template:
+    metadata:
+      name: rstemp
+      labels:
+        app: web
+        eg: rs
+    spec:
+      containers:
+       - name: myrscont
+         image: shivanshu1025/k8stesting:v2        
+ 
+  
